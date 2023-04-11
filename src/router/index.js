@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from "vue";
+import VueRouter from "vue-router";
 //import HomeView from '../views/HomeView.vue'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   // {
@@ -21,27 +21,27 @@ const routes = [
   {
     path: "/main",
     name: "Main",
-    component: () => import('../views/MainView.vue'),
+    component: () => import("../views/MainView.vue"),
     children: [
       {
         path: "home",
         name: "Home",
-        component: () => import('../views/HomeView.vue'),
+        component: () => import("../views/HomeView.vue"),
       },
       {
         path: "menu",
         name: "Menu",
-        component: () => import('../views/MenuView.vue'),
+        component: () => import("../views/MenuView.vue"),
       },
       {
         path: "shopbag",
         name: "Shopbag",
-        component: () => import('../views/ShopbagView.vue'),
+        component: () => import("../views/ShopbagView.vue"),
       },
       {
         path: "my",
         name: "My",
-        component: () => import('../views/MyView.vue'),
+        component: () => import("../views/MyView.vue"),
         // children: [{
         //   path: "myinfo",
         //   name: "myinfo",
@@ -49,31 +49,36 @@ const routes = [
         // }
 
         // ]
-      }
-    ]
+      },
+    ],
   },
   {
     path: "*",
     redirect: {
-      name: "Home"
-    }
+      name: "Home",
+    },
   },
   {
     path: "/login",
     name: "Login",
-    component: () => import('../views/LoginView.vue')
+    component: () => import("../views/LoginView.vue"),
   },
-{
-  path:"/person",
-  name:"Person",
-  component: () => import('../views/MyInfoView.vue')
-}
-]
+  {
+    path: "/person",
+    name: "Person",
+    component: () => import("../views/MyInfoView.vue"),
+  },
+  {
+    path: "/safety",
+    name: "safety",
+    component: () => import("../views/safetyView.vue"),
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

@@ -55,7 +55,7 @@
         <van-cell title="我的订单" is-link />
         <van-cell title="我的收藏" is-link />
         <van-cell title="地址管理" is-link />
-        <van-cell title="设置" is-link />
+        <van-cell title="设置" is-link to="/safety" />
       </div>
     </div>
   </div>

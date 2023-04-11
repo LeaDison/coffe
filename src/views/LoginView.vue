@@ -43,7 +43,7 @@
         >
       </div>
     </van-form>
-    <div style="margin: 50px 16px 16px 16px">
+    <div style="margin: 50px 25px 16px 25px">
       <van-button
         @click="show = true"
         style="
@@ -111,11 +111,6 @@ export default {
         password_r: "",
         username: "",
       },
-      // username: "",
-      // phone: "",
-      // phone_r: "",
-      // password: "",
-      // password_r: "",
       passwordStatus: false,
       show: false,
       // name_rule: /^[A-Za-z\u4e00-\u9fa5]{1,5}$/,
@@ -167,7 +162,7 @@ export default {
     //成功登录的提交
     loginSubmit(val) {
       console.log("提交的登录信息", val);
-     
+
       res
         .request({
           url: "/login",
@@ -216,7 +211,7 @@ export default {
           if (data.code == 102) {
             this.$toast.fail(data.msg);
           } else if (data.code == 100) {
-            this.$toast.success(data.msg)
+            this.$toast.success(data.msg);
             for (let key in this.register) {
               this.register[key] = "";
             }
